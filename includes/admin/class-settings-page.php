@@ -311,9 +311,7 @@ class Maranatha_Giving_Settings_Page {
         <table class="form-table">
             <?php
             $this->text_field( $options, 'admin_bcc_email', 'Admin BCC Email', 'Receive a copy of every receipt' );
-            $this->text_field( $options, 'email_from_name', 'From Name' );
-            $this->text_field( $options, 'email_from_address', 'From Address' );
-            $this->text_field( $options, 'email_reply_to', 'Reply-To Address', 'Replies to receipts will go to this address. Leave blank to use the From Address.' );
+            $this->text_field( $options, 'email_reply_to', 'Reply-To Address', 'Replies to receipts will go to this address. Leave blank to use your site\'s default.' );
             $this->text_field( $options, 'receipt_subject', 'Receipt Subject', 'Merge tags: {donor_first_name}, {donation_amount}, {church_name}' );
             ?>
             <tr>
