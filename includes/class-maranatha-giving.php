@@ -260,9 +260,7 @@ class Maranatha_Giving {
             wp_send_json_error( 'Permission denied.' );
         }
 
-        $to        = get_option( 'admin_email' );
-        $from_name = self::get_option( 'email_from_name', get_bloginfo( 'name' ) );
-        $from_addr = self::get_option( 'email_from_address', get_option( 'admin_email' ) );
+        $to = get_option( 'admin_email' );
 
         // Build sample merge tags for preview.
         $tags = array(
@@ -314,7 +312,6 @@ class Maranatha_Giving {
 
         $headers = array(
             'Content-Type: text/html; charset=UTF-8',
-            "From: {$from_name} <{$from_addr}>",
         );
 
         $reply_to = self::get_option( 'email_reply_to', '' );

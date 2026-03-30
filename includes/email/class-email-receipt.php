@@ -30,13 +30,10 @@ class Maranatha_Giving_Email_Receipt {
             $body = Maranatha_Giving_Email_Templates::render_receipt( $donation_id );
         }
 
-        $from_name    = Maranatha_Giving::get_option( 'email_from_name', get_bloginfo( 'name' ) );
-        $from_address = Maranatha_Giving::get_option( 'email_from_address', get_option( 'admin_email' ) );
-        $bcc_email    = Maranatha_Giving::get_option( 'admin_bcc_email', '' );
+        $bcc_email = Maranatha_Giving::get_option( 'admin_bcc_email', '' );
 
         $headers = array(
             'Content-Type: text/html; charset=UTF-8',
-            "From: {$from_name} <{$from_address}>",
         );
 
         $reply_to = Maranatha_Giving::get_option( 'email_reply_to', '' );

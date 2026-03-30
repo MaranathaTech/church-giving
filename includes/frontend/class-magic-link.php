@@ -54,12 +54,8 @@ class Maranatha_Giving_Magic_Link {
         include $template;
         $body = ob_get_clean();
 
-        $from_name    = Maranatha_Giving::get_option( 'email_from_name', get_bloginfo( 'name' ) );
-        $from_address = Maranatha_Giving::get_option( 'email_from_address', get_option( 'admin_email' ) );
-
         $headers = array(
             'Content-Type: text/html; charset=UTF-8',
-            "From: {$from_name} <{$from_address}>",
         );
 
         return wp_mail( $donor->email, $subject, $body, $headers );
