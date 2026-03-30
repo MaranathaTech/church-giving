@@ -1,0 +1,17 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "maranatha-giving/donor-portal",
+    "version": "1.0.0",
+    "title": "Donor Portal",
+    "category": "widgets",
+    "icon": "admin-users",
+    "description": "Display the donor giving portal with history and subscription management.",
+    "supports": {
+        "html": false,
+        "align": ["wide", "full"]
+    },
+    "textdomain": "maranatha-giving",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./editor.css"
+}

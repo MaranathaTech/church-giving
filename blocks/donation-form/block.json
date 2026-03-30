@@ -1,0 +1,35 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "maranatha-giving/donation-form",
+    "version": "1.0.0",
+    "title": "Donation Form",
+    "category": "widgets",
+    "icon": "heart",
+    "description": "Display a donation form with configurable amounts, funds, and payment methods.",
+    "supports": {
+        "html": false,
+        "align": ["wide", "full"]
+    },
+    "attributes": {
+        "funds": {
+            "type": "string",
+            "default": ""
+        },
+        "amounts": {
+            "type": "string",
+            "default": ""
+        },
+        "showRecurring": {
+            "type": "string",
+            "default": "yes"
+        },
+        "formId": {
+            "type": "string",
+            "default": "default"
+        }
+    },
+    "textdomain": "maranatha-giving",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./editor.css"
+}

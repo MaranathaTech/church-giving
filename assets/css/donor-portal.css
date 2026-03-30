@@ -1,0 +1,559 @@
+/* === Church Giving — Donor Portal === */
+/* Uses .mg-portal scoping for specificity against theme resets */
+
+.mg-portal {
+    --mg-primary: #2c3e50;
+    --mg-accent: #27ae60;
+    --mg-accent-dark: #219a52;
+    --mg-border: #ddd;
+    --mg-bg: #f8f9fa;
+    --mg-text: #333;
+    --mg-text-light: #666;
+    --mg-radius: 8px;
+    --mg-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    --mg-shadow-lg: 0 4px 24px rgba(0,0,0,0.08);
+
+    max-width: 700px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--mg-text);
+}
+
+/* ===== Login ===== */
+.mg-portal.mg-portal-login .mg-portal-card {
+    max-width: 420px;
+    margin: 40px auto;
+    text-align: center;
+    background: #fff !important;
+    border-radius: var(--mg-radius);
+    box-shadow: var(--mg-shadow-lg) !important;
+    border-top: 3px solid var(--mg-accent);
+    padding: 40px 35px 35px;
+}
+
+.mg-portal .mg-portal-lock-icon {
+    margin-bottom: 18px;
+    line-height: 1;
+}
+
+.mg-portal .mg-portal-lock-icon svg {
+    width: 48px !important;
+    height: 48px !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
+    color: var(--mg-accent);
+    overflow: visible;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.mg-portal .mg-portal-title {
+    font-size: 22px !important;
+    margin: 0 0 8px !important;
+    color: var(--mg-primary);
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.mg-portal .mg-portal-subtitle {
+    font-size: 14px;
+    color: var(--mg-text-light);
+    margin: 0 0 28px;
+    line-height: 1.5;
+}
+
+.mg-portal .mg-portal-form .mg-label {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mg-text-light);
+    margin-bottom: 6px;
+}
+
+.mg-portal .mg-portal-form .mg-input {
+    width: 100% !important;
+    padding: 10px 14px !important;
+    border: 1px solid var(--mg-border) !important;
+    border-radius: var(--mg-radius) !important;
+    font-size: 15px !important;
+    margin-bottom: 18px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    box-sizing: border-box;
+    background: #fff !important;
+    color: var(--mg-text);
+    line-height: 1.4;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.mg-portal .mg-portal-form .mg-input:focus {
+    outline: none !important;
+    border-color: var(--mg-accent) !important;
+    box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.12) !important;
+}
+
+.mg-portal .mg-submit-btn {
+    width: 100%;
+    padding: 12px 24px !important;
+    background: var(--mg-accent) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: var(--mg-radius) !important;
+    font-size: 15px !important;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+    position: relative;
+    line-height: 1.4;
+    letter-spacing: normal;
+    text-transform: none;
+    box-shadow: none !important;
+}
+
+.mg-portal .mg-submit-btn:hover {
+    background: var(--mg-accent-dark) !important;
+    color: #fff !important;
+}
+
+.mg-portal .mg-submit-btn:active {
+    transform: scale(0.98);
+}
+
+.mg-portal .mg-submit-btn:disabled {
+    opacity: 0.7;
+    cursor: default;
+    transform: none;
+}
+
+.mg-portal .mg-submit-spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255,255,255,0.3) !important;
+    border-top-color: #fff !important;
+    border-radius: 50% !important;
+    animation: mg-spin 0.6s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes mg-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Messages */
+.mg-portal .mg-message {
+    margin-top: 16px;
+    padding: 10px 14px;
+    border-radius: var(--mg-radius);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.mg-portal .mg-message.mg-success {
+    background: #e8f8ef !important;
+    color: #1a7a3e !important;
+    border: 1px solid #b8e6cc !important;
+}
+
+.mg-portal .mg-message.mg-error-msg {
+    background: #fdf0f0 !important;
+    color: #c0392b !important;
+    border: 1px solid #f5c6c6 !important;
+}
+
+/* ===== Header ===== */
+.mg-portal .mg-portal-header {
+    margin-bottom: 28px;
+}
+
+.mg-portal .mg-portal-greeting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mg-portal .mg-portal-greeting h2 {
+    margin: 0 !important;
+    font-size: 22px !important;
+    color: var(--mg-primary);
+    font-weight: 600;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.mg-portal a.mg-portal-logout {
+    font-size: 13px;
+    color: var(--mg-text-light) !important;
+    text-decoration: none !important;
+    padding: 6px 14px;
+    border: 1px solid var(--mg-border) !important;
+    border-radius: var(--mg-radius);
+    transition: all 0.15s ease;
+    background: none !important;
+}
+
+.mg-portal a.mg-portal-logout:hover {
+    color: var(--mg-text) !important;
+    border-color: var(--mg-text-light) !important;
+}
+
+/* ===== Stat Cards ===== */
+.mg-portal .mg-portal-stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.mg-portal .mg-stat-card {
+    flex: 1;
+    background: #fff !important;
+    border-radius: var(--mg-radius);
+    padding: 22px 20px;
+    text-align: center;
+    box-shadow: var(--mg-shadow) !important;
+    border-left: 4px solid var(--mg-accent) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.mg-portal .mg-stat-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1) !important;
+}
+
+.mg-portal .mg-stat-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--mg-primary);
+}
+
+.mg-portal .mg-stat-label {
+    font-size: 11px;
+    color: var(--mg-text-light);
+    margin-top: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    font-weight: 500;
+}
+
+/* ===== Tabs ===== */
+.mg-portal .mg-portal-tabs {
+    display: flex;
+    border-bottom: 2px solid var(--mg-border);
+    margin-bottom: 24px;
+}
+
+.mg-portal .mg-portal-tab {
+    padding: 10px 20px !important;
+    border: none !important;
+    background: none !important;
+    font-size: 14px !important;
+    font-weight: 500;
+    color: var(--mg-text-light) !important;
+    cursor: pointer;
+    border-bottom: 2px solid transparent !important;
+    margin-bottom: -2px;
+    transition: all 0.15s ease;
+    box-shadow: none !important;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.mg-portal .mg-portal-tab:hover {
+    color: var(--mg-primary) !important;
+    background: none !important;
+}
+
+.mg-portal .mg-portal-tab.mg-active {
+    color: var(--mg-primary) !important;
+    border-bottom-color: var(--mg-accent) !important;
+    background: none !important;
+}
+
+/* ===== Panels ===== */
+.mg-portal .mg-portal-panel {
+    display: none;
+}
+
+.mg-portal .mg-portal-panel.mg-active {
+    display: block;
+}
+
+/* ===== Tables (History + Subscriptions) ===== */
+.mg-portal .mg-history-table,
+.mg-portal .mg-subs-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: #fff;
+    border-radius: var(--mg-radius);
+    overflow: hidden;
+    box-shadow: var(--mg-shadow) !important;
+}
+
+.mg-portal .mg-history-table th,
+.mg-portal .mg-subs-table th {
+    text-align: left;
+    padding: 12px 14px !important;
+    border: none !important;
+    border-bottom: 2px solid var(--mg-border) !important;
+    font-weight: 600;
+    color: var(--mg-text-light);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    background: var(--mg-bg) !important;
+}
+
+.mg-portal .mg-history-table td,
+.mg-portal .mg-subs-table td {
+    padding: 12px 14px !important;
+    border: none !important;
+    border-bottom: 1px solid #eee !important;
+}
+
+.mg-portal .mg-history-table tbody tr:nth-child(even) td,
+.mg-portal .mg-subs-table tbody tr:nth-child(even) td {
+    background: #fafbfc;
+}
+
+.mg-portal .mg-history-table tbody tr:hover td,
+.mg-portal .mg-subs-table tbody tr:hover td {
+    background: #f0f4f8;
+    transition: background 0.1s ease;
+}
+
+.mg-portal .mg-history-table tbody tr:last-child td,
+.mg-portal .mg-subs-table tbody tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* Status Badges */
+.mg-portal .mg-status-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: capitalize;
+    letter-spacing: 0.3px;
+    line-height: 1.4;
+}
+
+.mg-portal .mg-status-completed,
+.mg-portal .mg-status-active {
+    background: #e8f8ef !important;
+    color: #1a7a3e !important;
+}
+
+.mg-portal .mg-status-pending {
+    background: #fff8e1 !important;
+    color: #b8860b !important;
+}
+
+.mg-portal .mg-status-refunded {
+    background: #fdf0f0 !important;
+    color: #c0392b !important;
+}
+
+.mg-portal .mg-status-cancelled,
+.mg-portal .mg-status-canceled {
+    background: #f0f0f0 !important;
+    color: #666 !important;
+}
+
+.mg-portal .mg-status-failed {
+    background: #fdf0f0 !important;
+    color: #c0392b !important;
+}
+
+/* Action Buttons */
+.mg-portal .mg-resend-btn {
+    background: none !important;
+    border: 1px solid var(--mg-accent) !important;
+    color: var(--mg-accent) !important;
+    cursor: pointer;
+    font-size: 12px !important;
+    padding: 4px 12px !important;
+    border-radius: 4px !important;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    box-shadow: none !important;
+}
+
+.mg-portal .mg-resend-btn:hover {
+    background: var(--mg-accent) !important;
+    color: #fff !important;
+}
+
+.mg-portal .mg-resend-btn:disabled {
+    color: var(--mg-text-light) !important;
+    border-color: var(--mg-border) !important;
+    cursor: default;
+    background: none !important;
+}
+
+.mg-portal .mg-cancel-btn {
+    background: none !important;
+    border: 1px solid #dc3545 !important;
+    color: #dc3545 !important;
+    padding: 4px 12px !important;
+    border-radius: 4px !important;
+    cursor: pointer;
+    font-size: 12px !important;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+    box-shadow: none !important;
+}
+
+.mg-portal .mg-cancel-btn:hover {
+    background: #dc3545 !important;
+    color: #fff !important;
+}
+
+.mg-portal .mg-cancel-btn:disabled {
+    opacity: 0.6;
+    cursor: default;
+}
+
+/* ===== Pagination ===== */
+.mg-portal .mg-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.mg-portal .mg-page-btn {
+    padding: 6px 12px !important;
+    border: 1px solid var(--mg-border) !important;
+    border-radius: 4px !important;
+    background: #fff !important;
+    cursor: pointer;
+    font-size: 13px !important;
+    transition: all 0.15s ease;
+    box-shadow: none !important;
+    color: var(--mg-text);
+}
+
+.mg-portal .mg-page-btn:hover {
+    border-color: var(--mg-primary) !important;
+    color: var(--mg-primary) !important;
+}
+
+.mg-portal .mg-page-btn.mg-active {
+    background: var(--mg-primary) !important;
+    color: #fff !important;
+    border-color: var(--mg-primary) !important;
+}
+
+/* ===== Profile Section ===== */
+.mg-portal .mg-panel-profile .mg-portal-form {
+    background: #fff;
+    border-radius: var(--mg-radius);
+    box-shadow: var(--mg-shadow) !important;
+    padding: 24px;
+}
+
+.mg-portal .mg-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 4px;
+}
+
+.mg-portal .mg-col {
+    flex: 1;
+}
+
+.mg-portal .mg-panel-profile .mg-submit-btn {
+    margin-top: 8px;
+}
+
+/* ===== Loading State ===== */
+.mg-portal .mg-loading {
+    text-align: center;
+    color: var(--mg-text-light);
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+.mg-portal .mg-loading::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 28px;
+    border: 3px solid var(--mg-border) !important;
+    border-top-color: var(--mg-accent) !important;
+    border-radius: 50%;
+    animation: mg-spin 0.6s linear infinite;
+    margin: 0 auto 12px;
+}
+
+/* ===== Empty / No Data States ===== */
+.mg-portal .mg-no-data {
+    text-align: center;
+    color: var(--mg-text-light);
+    padding: 40px 20px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.mg-portal .mg-no-data::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 12px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23ccc' stroke-width='1.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/* ===== Table Wrapper for Mobile Scroll ===== */
+.mg-portal .mg-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .mg-portal.mg-portal-login .mg-portal-card {
+        margin: 20px auto;
+        padding: 30px 24px 28px;
+    }
+
+    .mg-portal .mg-portal-stats {
+        flex-direction: column;
+    }
+
+    .mg-portal .mg-stat-card {
+        border-left-width: 3px !important;
+    }
+
+    .mg-portal .mg-portal-tabs {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .mg-portal .mg-portal-tab {
+        padding: 8px 14px !important;
+        font-size: 13px !important;
+    }
+
+    .mg-portal .mg-history-table,
+    .mg-portal .mg-subs-table {
+        font-size: 13px;
+    }
+
+    .mg-portal .mg-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .mg-portal .mg-panel-profile .mg-portal-form {
+        padding: 18px;
+    }
+}

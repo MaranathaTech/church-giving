@@ -1,0 +1,14 @@
+{
+    "name": "maranatha-tech/church-giving",
+    "description": "Lightweight WordPress donation plugin with Stripe and PayPal support, recurring giving, email receipts, and a donor portal.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "php": ">=8.1",
+        "stripe/stripe-php": "^16.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}

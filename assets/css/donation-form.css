@@ -1,0 +1,431 @@
+/* === Church Giving — Donation Form === */
+/* Uses .mg-donation-form scoping for specificity against theme resets */
+
+.mg-donation-form {
+    --mg-primary: #2c3e50;
+    --mg-primary-hover: #34495e;
+    --mg-accent: #27ae60;
+    --mg-accent-hover: #219a52;
+    --mg-border: #ddd;
+    --mg-bg: #f8f9fa;
+    --mg-text: #333;
+    --mg-text-light: #666;
+    --mg-radius: 6px;
+    --mg-spacing: 20px;
+
+    max-width: 520px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--mg-text);
+}
+
+.mg-donation-form .mg-section {
+    margin-bottom: var(--mg-spacing);
+}
+
+.mg-donation-form .mg-label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: var(--mg-text);
+}
+
+/* Amount Buttons */
+.mg-donation-form .mg-amount-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.mg-donation-form .mg-amount-btn {
+    flex: 1 1 calc(25% - 6px);
+    min-width: 80px;
+    padding: 12px 8px !important;
+    border: 2px solid var(--mg-border) !important;
+    border-radius: var(--mg-radius) !important;
+    background: #fff !important;
+    font-size: 16px !important;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: var(--mg-text) !important;
+    box-shadow: none !important;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.4;
+}
+
+.mg-donation-form .mg-amount-btn:hover {
+    border-color: var(--mg-primary) !important;
+    color: var(--mg-primary) !important;
+}
+
+.mg-donation-form .mg-amount-btn.mg-active {
+    border-color: var(--mg-primary) !important;
+    background: var(--mg-primary) !important;
+    color: #fff !important;
+}
+
+/* Custom Amount */
+.mg-donation-form .mg-custom-amount {
+    margin-top: 10px;
+}
+
+.mg-donation-form .mg-input-group {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--mg-border) !important;
+    border-radius: var(--mg-radius) !important;
+    overflow: hidden;
+}
+
+.mg-donation-form .mg-input-prefix {
+    padding: 10px 12px;
+    background: var(--mg-bg) !important;
+    font-weight: 600;
+    color: var(--mg-text-light);
+    border-right: 1px solid var(--mg-border) !important;
+}
+
+.mg-donation-form .mg-input-group .mg-input {
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+/* Frequency Buttons */
+.mg-donation-form .mg-frequency-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.mg-donation-form .mg-freq-btn {
+    flex: 1;
+    min-width: 80px;
+    padding: 10px 6px !important;
+    border: 2px solid var(--mg-border) !important;
+    border-radius: var(--mg-radius) !important;
+    background: #fff !important;
+    font-size: 13px !important;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: var(--mg-text) !important;
+    box-shadow: none !important;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.4;
+}
+
+.mg-donation-form .mg-freq-btn:hover {
+    border-color: var(--mg-primary) !important;
+}
+
+.mg-donation-form .mg-freq-btn.mg-active {
+    border-color: var(--mg-primary) !important;
+    background: var(--mg-primary) !important;
+    color: #fff !important;
+}
+
+/* Inputs */
+.mg-donation-form .mg-input,
+.mg-donation-form .mg-select {
+    width: 100% !important;
+    padding: 10px 12px !important;
+    border: 2px solid var(--mg-border) !important;
+    border-radius: var(--mg-radius) !important;
+    font-size: 15px !important;
+    color: var(--mg-text);
+    background: #fff !important;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.mg-donation-form .mg-input:focus,
+.mg-donation-form .mg-select:focus {
+    outline: none !important;
+    border-color: var(--mg-primary) !important;
+    box-shadow: 0 0 0 3px rgba(44, 62, 80, 0.1) !important;
+}
+
+.mg-donation-form .mg-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.mg-donation-form .mg-col {
+    flex: 1;
+}
+
+/* Payment Tabs */
+.mg-donation-form .mg-payment-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 15px;
+}
+
+.mg-donation-form .mg-payment-tab {
+    flex: 0 1 auto;
+    padding: 10px 20px !important;
+    border: 2px solid var(--mg-border) !important;
+    border-radius: var(--mg-radius) !important;
+    background: #fff !important;
+    font-size: 14px !important;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: var(--mg-text) !important;
+    box-shadow: none !important;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.4;
+}
+
+.mg-donation-form .mg-payment-tab:hover {
+    border-color: var(--mg-primary) !important;
+}
+
+.mg-donation-form .mg-payment-tab.mg-active {
+    border-color: var(--mg-primary) !important;
+    background: var(--mg-primary) !important;
+    color: #fff !important;
+}
+
+/* When only one payment tab, still keep it compact */
+.mg-donation-form .mg-payment-tabs .mg-payment-tab:only-child {
+    flex: 0 1 auto;
+}
+
+.mg-donation-form .mg-payment-panel {
+    display: none;
+}
+
+.mg-donation-form .mg-payment-panel.mg-active {
+    display: block;
+}
+
+/* Stripe Elements container */
+.mg-donation-form #mg-stripe-elements {
+    padding: 12px !important;
+    border: 2px solid var(--mg-border) !important;
+    border-radius: var(--mg-radius) !important;
+    background: #fff !important;
+    min-height: 44px;
+}
+
+.mg-donation-form .mg-error {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* Submit Button */
+.mg-donation-form .mg-submit-btn {
+    width: 100%;
+    padding: 14px 24px !important;
+    border: none !important;
+    border-radius: var(--mg-radius) !important;
+    background: var(--mg-accent) !important;
+    color: #fff !important;
+    font-size: 18px !important;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    position: relative;
+    box-shadow: none !important;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.4;
+}
+
+.mg-donation-form .mg-submit-btn:hover {
+    background: var(--mg-accent-hover) !important;
+    color: #fff !important;
+}
+
+.mg-donation-form .mg-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.mg-donation-form .mg-submit-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3) !important;
+    border-top-color: #fff !important;
+    border-radius: 50% !important;
+    animation: mg-spin 0.6s linear infinite;
+    vertical-align: middle;
+}
+
+@keyframes mg-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Messages */
+.mg-donation-form .mg-message {
+    padding: 12px 16px;
+    border-radius: var(--mg-radius);
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.mg-donation-form .mg-message.mg-success {
+    background: #d4edda !important;
+    border: 1px solid #c3e6cb !important;
+    color: #155724 !important;
+}
+
+.mg-donation-form .mg-message.mg-error-msg {
+    background: #f8d7da !important;
+    border: 1px solid #f5c6cb !important;
+    color: #721c24 !important;
+}
+
+/* Tax Footer */
+.mg-donation-form .mg-tax-footer {
+    border-top: 1px solid var(--mg-border) !important;
+    padding-top: 15px;
+}
+
+.mg-donation-form .mg-tax-text {
+    font-size: 12px;
+    color: var(--mg-text-light);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Lead-In */
+.mg-donation-form .mg-lead-in {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.mg-donation-form .mg-lead-in-heading {
+    font-size: 28px !important;
+    font-weight: 700;
+    color: var(--mg-primary);
+    margin: 0 0 4px !important;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--mg-accent) !important;
+    display: inline-block;
+    font-style: normal;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.mg-donation-form .mg-lead-in-body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--mg-text-light);
+    margin-top: 16px;
+}
+
+.mg-donation-form .mg-lead-in-body p {
+    margin: 0 0 12px;
+}
+
+.mg-donation-form .mg-lead-in-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* Step Visibility */
+.mg-donation-form .mg-step {
+    display: none;
+}
+
+.mg-donation-form .mg-step.mg-step-active {
+    display: block;
+}
+
+/* Step Navigation Buttons */
+.mg-donation-form .mg-step-nav {
+    display: flex;
+    gap: 12px;
+    margin-top: var(--mg-spacing);
+}
+
+.mg-donation-form .mg-btn {
+    padding: 12px 24px !important;
+    border: 2px solid var(--mg-border) !important;
+    border-radius: var(--mg-radius) !important;
+    background: #fff !important;
+    font-size: 15px !important;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    color: var(--mg-text) !important;
+    box-shadow: none !important;
+    text-transform: none;
+    letter-spacing: normal;
+    line-height: 1.4;
+}
+
+.mg-donation-form .mg-btn:hover {
+    border-color: var(--mg-primary) !important;
+    color: var(--mg-primary) !important;
+}
+
+.mg-donation-form .mg-btn-next {
+    flex: 1;
+    background: var(--mg-primary) !important;
+    border-color: var(--mg-primary) !important;
+    color: #fff !important;
+}
+
+.mg-donation-form .mg-btn-next:hover {
+    background: var(--mg-primary-hover) !important;
+    border-color: var(--mg-primary-hover) !important;
+    color: #fff !important;
+}
+
+/* Step error messages */
+.mg-donation-form .mg-step-error {
+    color: #dc3545;
+    font-size: 13px;
+    margin-top: 8px;
+    display: none;
+}
+
+.mg-donation-form .mg-step-error.mg-visible {
+    display: block;
+}
+
+/* Bot Protection (Turnstile) */
+.mg-donation-form .mg-turnstile-section {
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .mg-donation-form .mg-amount-btn {
+        flex: 1 1 calc(50% - 4px);
+    }
+
+    .mg-donation-form .mg-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .mg-donation-form .mg-frequency-buttons {
+        flex-wrap: wrap;
+    }
+
+    .mg-donation-form .mg-freq-btn {
+        flex: 1 1 calc(33% - 4px);
+    }
+
+    .mg-donation-form .mg-lead-in-heading {
+        font-size: 22px !important;
+    }
+
+    .mg-donation-form .mg-lead-in-body {
+        font-size: 14px;
+    }
+}
